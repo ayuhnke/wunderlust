@@ -60,7 +60,7 @@ h1, h2, h3{
 
 h4, p, q, small, nav, button, form{
     font-family: "Montserrat", sans-serif;
-    font-size: 27px;
+    font-size: 26px;
 }
 
 /* Branding Colors */
@@ -83,34 +83,26 @@ h4, p, q, small, nav, button, form{
     position: absolute;
     transform: translateY(-150%);
     transition: transform 0.3s;
-  }
+   }
   
-  .skip-link:focus {
+.skip-link:focus {
     transform: translateY(0%);
   }
 
 /* Menu and Header */
 header{
     background-image: linear-gradient(var(--teal), var(--white));
-    display: block;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
     justify-content: space-between;
     align-items: center;
     padding: 1rem;
 }
 
-h1{
-  font-size: 48px;
-  padding-top: 10px;
-  padding-bottom: 5px;
-  margin-bottom: 5px;
-}
-
-h2, h3{
-  font-size: 36px;
-  padding-top: 10px;
-  padding-bottom: 5px;
-  margin-top: 1em;
-  font-weight: 900;
+menu{
+  grid-column: 2;
+  grid-row: 1;
 }
 
 h4{
@@ -125,43 +117,48 @@ p{
   line-height: 1.5em;
 }
 
-#logo {
-  position:absolute;
-  left:5px;
-  top:5px;
+#logo{
+  position: absolute;
+  left: 5px;
+  top: 5px;
 }
-nav {
-  position:absolute;
+
+nav{
+  position: absolute;
   right: 0px;
-  top:10px;
+  top: 10px;
 }
-h1 {
+
+h1{
   margin-top: 150px;
   font-size: 65px;
   color: var(--dark-gray);
-  margin-left: 50px;
-  margin-right: 50px;
+  margin-left: 10px;
 }
-header p {
+
+header p{
   padding-top: 10px;
-  font-size: 23px;
-  color: var(--dark-gray);
+  font-size: 20px;
   margin-left: 50px;
-  margin-right: 50px;
 }
-ul {
+
+ul{
   display: none;
 }
-nav li {
+
+nav li{
   background-color: var(--white);
 }
-header label {
+
+header label{
   background-color: var(--yellow);
-  padding-bottom: 20px;
-  padding-left: 100px;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  padding-left: 110px;
   padding-right: 75px;
 }
-#menu-toggle {
+
+#menu-toggle{
   padding: 20px;
   font-size: large;
   font-weight: 600;
@@ -169,11 +166,11 @@ header label {
   overflow: hidden;
 }
 
-#toggle {
+#toggle{
   display: none;
 }
 
-#toggle:checked ~ ul {
+#toggle:checked ~ ul{
   display: block;
   text-align: center;
 }
@@ -181,6 +178,10 @@ header label {
 header a{
   text-decoration: none;
   color: var(--black);
+}
+
+nav li{
+  padding: 1.5rem;
 }
 
 header h2{
@@ -196,13 +197,14 @@ header h2{
 #main-content h2{
   font-size: 50px;
   padding-top: 50px;
-  padding-bottom: 10px;
-  margin-left: 50px;
-  margin-right: 50px;
+  padding-bottom: 15px;
+  margin-left: 20px;
 }
 
 #main-content p{
   font-size: 20px;
+  color: var(--dark-gray);
+  line-height: 2.2rem;
   padding-bottom: 20px;
   margin-left: 50px;
   margin-right: 50px;
@@ -351,8 +353,8 @@ header h2{
 /* Contact Form */
 #contact h3{
   font-size: 50px;
-  margin-left: 50px;
-  padding-bottom: 30px;
+  margin-left: 18px;
+  padding-bottom: 45px;
   padding-top: 30px;
   line-height: 3.5rem;
   margin-bottom: -50px;
@@ -418,12 +420,12 @@ fieldset{
   flex-direction: column;
 }
 
-.radio-label {
+.radio-label{
   margin-left: 15px;
   margin-top: 20px;
 }
 
-fieldset label {
+fieldset label{
   text-transform: capitalize;
   font-weight: normal;
 }
@@ -434,31 +436,31 @@ input[type="radio"]{
   margin: 0;
   color: var(--purple);
   width: 75px;
+  height: 75px;
   border: 0.15em solid var(--purple);
   border-radius: 50%;
 }
 
-input[type="radio"] {
-  /* ...existing styles */
+input[type="radio"]{
   display: grid;
   place-content: center;
 }  
 
-input[type="radio"]::before {
+input[type="radio"]::before{
   content: "";
   width: 0.65em;
   height: 0.65em;
   border-radius: 50%;
   transform: scale(0);
-  transition: 120ms transform ease-in-out;
+  transition: 60ms transform ease-in-out;
   box-shadow: inset 1em 1em var(--purple);
 }  
 
-input[type="radio"]:checked::before {
+input[type="radio"]:checked::before{
   transform: scale(4);
 }
 
-input[type=submit] {
+input[type=submit]{
   background-color: var(--purple);
   border: none;
   color: var(--white);
@@ -475,7 +477,7 @@ input[type=submit] {
 }
 
 /* Footer */
-footer {
+footer{
   background: var(--light-gray);
   display: flex;
   flex-direction: column;
@@ -484,11 +486,11 @@ footer {
   font-size: 18px;
 }
 
-footer p {
+footer p{
   padding-bottom: 20px;
 }
 
-footer a {
+footer a{
   font-family: "Molle", cursive;
   font-family: 'Montserrat', sans-serif;
   text-decoration: none;
@@ -497,37 +499,38 @@ footer a {
 }
 
 /* Medium Screen Widths */
-@media screen and (min-width: 768px) {
-  body {
+@media screen and (min-width: 768px){
+  body{
     background: rgb(255,255,255);
     background: linear-gradient(0deg, rgba(255,255,255,1) 93%, rgba(85,188,213,1) 100%);
   }
 
   /* Header */
-  header {
+  header{
     display: grid;
     grid-template-columns: 1fr 3fr;
+    margin-top: -60px;
   }
 
-  #logo {
+  #logo{
     grid-column-start: 1;
     grid-column-end: 1;
     display: block;
     top: 50px;
   }
 
-  header h1 {
+  header h1{
     grid-column-start: 2;
     grid-column-end: -1;
     margin-top: 75px;
   }
 
-  header p {
+  header p{
     grid-column-start: 2;
     grid-column-end: -1;
   }
 
-  ul {
+  ul{
     padding: 0;
     display: flex;
     justify-content: space-between;
@@ -536,23 +539,23 @@ footer a {
     margin-right: 50px;
   }
 
-  nav li {
+  nav li{
     display: inline-block;
     height: 100%;
     padding: 0;
-    padding-top: 15px;
-    padding-bottom: 15px;
+    padding-top: 20px;
+    padding-bottom: 20px;
     padding-left: 10px;
     padding-right: 10px;
   }
 
-  nav a {
+  nav a{
     padding: 0;
     margin-left: 5px;
     margin-right: 5px;
   }
 
-  nav {
+  nav{
     position: absolute;
     top: 200px;
     right: 0;
@@ -561,11 +564,11 @@ footer a {
     text-align: center;
   }
 
-  .active {
+  .active{
     background-color: var(--yellow);
   }
 
-  header label {
+  header label{
     position: absolute;
     left: -10000px;
     top: auto;
@@ -576,39 +579,39 @@ footer a {
   }
 
   /* Main Section */
-  #main-content {
+  #main-content{
     padding-top: 100px;
   }
 
-  #main-content h2 {
+  #main-content h2{
     margin-left: 100px;
     margin-right: 100px;
   }
 
-  #main-content p {
+  #main-content p{
     margin-left: 100px;
     margin-right: 100px;
   }
 
-  #img-grid {
+  #img-grid{
     display: grid;
     grid-template-columns: 1fr 1fr;
     margin-left: 100px;
     margin-right: 100px;
   }
 
-  #img-grid picture {
+  #img-grid picture{
     grid-column-start: 1;
     grid-column-end: -1;
   }
 
   /* Plan Your Trip */
-  #plan h3 {
+  #plan h3{
     margin-left: 100px;
     margin-right: 100px;
   }
 
-  #plan div {
+  #plan div{
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 20px;
@@ -616,22 +619,22 @@ footer a {
     margin-right: 100px;
   }
 
-  #plan section {
+  #plan section{
     margin: 0;
     padding: 0;
   }
 
-  #plan h4 {
+  #plan h4{
     font-size: 25px;
   }
 
   /* Testimonials */
-  #testimonials h3 {
+  #testimonials h3{
     margin-left: 100px;
     margin-right: 100px;
   }
 
-  #testimonials div {
+  #testimonials div{
     display: grid;
     grid-template-columns: 1fr 1fr;
     overflow: hidden;
@@ -639,51 +642,51 @@ footer a {
     text-align: center;
   }
 
-  #testimonials section {
+  #testimonials section{
     margin: 0;
     padding: 0;
   }
 
-  #testimonials h4 {
+  #testimonials h4{
     margin-left: 25px;
     margin-right: 25px;
     padding: 0;
   }
 
-  #testimonials p {
+  #testimonials p{
     white-space: nowrap;
     padding: 0;
   }
 
-  #testimonials q {
+  #testimonials q{
     margin-left: 25px;
     margin-right: 25px;
     padding: 15px;
     line-height: 1.5rem;
   }
 
-  #testimonials img {
+  #testimonials img{
     padding: 10px;
   }
 
   /* About Section */
-  #about {
+  #about{
     overflow: hidden;
   }
 
-  #about h3 {
+  #about h3{
     margin-left: 100px;
     margin-right: 100px;
   }
 
-  #about div {
+  #about div{
     padding: 0;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
   }
 
-  #about img {
+  #about img{
     height: 100px;
     width: 250px;
     margin-right: 0px;
@@ -691,29 +694,29 @@ footer a {
     float: center;
   }
 
-  #about p {
+  #about p{
     font-size: 20px;
   }
 
-  #about section {
+  #about section{
     display: inline-block;
     width: 350px;
     margin-left: -110px;
   }
 
-  /* Contact Us */
-  #nums fieldset {
+  /* Contact Form */
+  #nums fieldset{
     display: flex;
     flex-direction: row;
   }
 
-  input[type=submit] {
+  input[type=submit]{
     width: 300px;
     float: right;
   }
 
   /* Footer */
-  footer {
+  footer{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -728,57 +731,68 @@ footer a {
   }
   @media screen and (min-width: 889px) {
   /* Header */
-  nav {
+  nav{
     position: absolute;
     top: -30px;
   }
-  nav ul {
-    margin-left: 950px;
+
+  nav ul{
+    margin-left: 1000px;
     margin-right: 0;
   }
-  nav li {
-    padding-bottom: 10px;
-    padding-top: 10px;
+
+  nav li{
+    padding-bottom: 20px;
+    padding-top: 28px;
   }
-  #logo {
+
+  #logo{
     position: absolute;
     left: 0;
   }
-  header h1 {
+
+  header h1{
     position: absolute;
-    left: 175px;
+    left: 200px;
+    padding-top: 250px;
   }
-  header p {
+
+  header p{
     position: absolute;
     left: 175px;
     top: 115px;
   }
+
   /* Main Section */
-  #intro h2 {
+  #intro h2{
     padding-top: 250px;
     margin-right: 0;
   }
-  #intro {
+
+  #intro{
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 0px;
     padding-bottom: 30px;
   }
-  #img-grid {
+
+  #img-grid{
     margin-left: 0;
   }
-  #intro p {
+
+  #intro p{
     grid-column-start: 1;
     grid-column-end: 1;
     margin-right: 0;
     padding-right: 30px;
   }
+
   /* Plan Your Trip */
-  #plan h3 {
+  #plan h3{
     padding-top: 50px;
     padding-bottom: 30px;
   }
-  #plan div {
+  #plan div{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -786,61 +800,66 @@ footer a {
     margin-left: 100px;
     padding-bottom: 75px;
   }
-  #plan section {
+  #plan section{
     padding-left: 50px;
     padding-right: 50px;
     width: 30%;
   }
-  #plan h4 {
+
+  #plan h4{
     white-space: nowrap;
   }
+
   /* Testimonials */
-  #testimonials div {
+  #testimonials div{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
   }
-  #testimonials h4 {
+  #testimonials h4{
     white-space: nowrap;
   }
+
+
   /* About Section */
-  #about {
+  #about{
     padding-top: 50px;
   }
-  #about div {
+
+  #about div{
     margin-left: 450px;
     margin-right: 500px;
     padding-bottom: 50px;
   }
+
   /* Contact Us */
-  #contact {
+  #contact{
     padding-top: 50px;
     padding-bottom: 75px;
   }
-  #contact form {
+
+  #contact form{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
   }
-  #names {
+
+  #names{
     grid-column-start: 1;
     grid-column-end: 1;
   }
-  #nums {
+
+  #nums{
     grid-column-start: 2;
     grid-column-end: 2;
   }
-  input {
+
+  input{
     width: 85%;
   }
+
   /* Footer */
-  footer p {
+  footer p{
     padding-right: 550px;
   }
 }
 /* End Large Screen Widths */
-
-/* Small Screen Widths */
-@media only screen and (max-width: 763px){
-
-}
-/* End Small Screen Widths */
